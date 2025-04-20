@@ -21,9 +21,22 @@
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="..">KV on Raft</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
                 <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Theory</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://thesecretlivesofdata.com/raft/" class="nav-link">Animation</a>
+                            </li>
+                        </ul>
 
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
@@ -51,6 +64,14 @@
             
             <li class="nav-item" data-level="1"><a href="#introduction-to-the-raft-algorithm" class="nav-link">Introduction to the Raft Algorithm</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#roles" class="nav-link">Roles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -61,7 +82,16 @@
 <h1 id="introduction-to-the-raft-algorithm">Introduction to the Raft Algorithm</h1>
 <p>Raft is a <strong>consensus algorithm</strong> that is widely used in distributed systems. It is designed to be <strong>fault-tolerant</strong> and <strong>robust</strong>.</p>
 <p>Raft is now used in many popular distributed systems, such as: Zookeeper, etcd, and Kubernetes. It is the only algorithm that is guaranteed to yield a <strong>strong consistency</strong> result for now.</p>
-<p>Raft is a <strong>consensus algorithm</strong>. This means that it doesn't guarantee <strong>consistency</strong>. Consistency is a property meaning that, the whole distributed system, as a whole, behaves as if a single thread single machine. Whereas Raft doesn't guarantee consistency, it guarantees <strong>consensus</strong>, that every node in the distributed system agrees on the same thing, such as a certain value.</p></div>
+<p>Raft is a <strong>consensus algorithm</strong>. This means that it guarantee <strong>linearizability</strong>, or <strong>consistency</strong>. That the distributed system behaves as if a single thread machine to foreign requests.</p>
+<p>We will see how Raft works to achieve this goal.</p>
+<h2 id="roles">Roles</h2>
+<p>Each node in a Raft cluster has one of the following roles:</p>
+<ul>
+<li>Leader, the head of the cluster that actually handles all requests. Every node in the cluster will have the same state as the leader. There can only be one leader at a time.</li>
+<li>Follower, any node that is under the governance of the leader.</li>
+<li>Candidate, a node that is not a leader, and not under the governance of the leader. A candidate will try to become a leader through the election process.</li>
+</ul>
+<h2 id="_1"></h2></div>
             </div>
         </div>
 
