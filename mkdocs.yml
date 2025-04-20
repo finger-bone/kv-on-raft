@@ -1,0 +1,20 @@
+site_name: KV on Raft
+site_url: https://finger-bone.github.io/kv-on-raft/
+site_description: A Practice Course for Raft Algorithm
+
+theme:
+  name: lux
+  font:
+    text: Inter
+    code: Fira Code
+
+docs_dir: notes
+
+nav:
+- Theory: 1.md
+
+extra_javascript:
+- https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+markdown_extensions:
+  mdx_math:
+    enable_dollar_delimiter: true
