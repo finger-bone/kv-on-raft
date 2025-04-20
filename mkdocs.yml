@@ -13,6 +13,8 @@ docs_dir: notes
 nav:
 - Theory: 1.md
 
+- Animation: https://thesecretlivesofdata.com/raft/
+
 extra_javascript:
 - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 markdown_extensions:
